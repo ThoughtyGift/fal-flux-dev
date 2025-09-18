@@ -1,10 +1,8 @@
-name: flux-kontext-dev
-runtime:
-  type: python
-  version: "3.11"
-entrypoint: predict.py:Predictor
-resources:
+build:
   gpu: true
   cuda: "12.1"
-install:
-  - pip install -r requirements.txt
+  python_version: "3.11"
+  python_requirements: requirements.txt
+
+predict: "predict.py:Predictor"
+name: flux-dev-app
