@@ -1,7 +1,7 @@
 {
   "name": "flux-dev-app",
-  "predict": "./predict.py:Predictor",
-  "requirements": "./requirements.txt",
+  "predict": "predict.py:Predictor",
+  "requirements": "requirements.txt",
   "python_version": "3.11",
   "gpu": true,
   "source_dir": "."
