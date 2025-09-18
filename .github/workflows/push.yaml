@@ -33,5 +33,5 @@ jobs:
         env:
           FAL_KEY: ${{ secrets.FAL_KEY }}
         run: |
-           fal build --config falconfig.yaml
-           fal deploy --config falconfig.yaml 
+           fal build 
+           fal deploy 
