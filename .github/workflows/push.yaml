@@ -21,6 +21,6 @@ jobs:
         run: pip install fal
 
       - name: Deploy to fal.ai
-        run: fal deploy --yes
+        run: fal deploy 
         env:
           FAL_KEY: ${{ secrets.FAL_API_KEY }}
