@@ -1,8 +1,11 @@
+name: flux-dev-app
+version: 0.1.0
+entry: predict.py:Predictor
 build:
   gpu: true
-  cuda: "12.1"
   python_version: "3.11"
-  python_requirements: requirements.txt
-
-predict: "predict.py:Predictor"
-name: flux-dev-app
+  requirements_file: requirements.txt
+files:
+  - predict.py
+  - requirements.txt
+  - car.jpg      # nếu cần
