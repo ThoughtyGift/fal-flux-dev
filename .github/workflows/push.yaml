@@ -2,29 +2,31 @@ name: Deploy to fal
 
 on:
   push:
-    branches: [ main ]
+    branches: [ "main" ]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v3
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
+      # Cài Python 3.11 (cho cog + requirements.txt)
+      - uses: actions/setup-python@v4
         with:
           python-version: '3.11'
 
-      - name: Install dependencies
-        run: |
-          pip install -r requirements.txt
-          pip install cog
+      # Cài đặt Node.js để có npm
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
 
-      - name: Install fal CLI
-        run: pip install fal-serverless
+      # Cài fal CLI toàn cục
+      - run: npm install -g fal@latest
 
-      - name: Deploy to fal
-        run: fal deploy
+      # Cài dependencies Python (bao gồm cog)
+      - run: pip install -r requirements.txt
+
+      # Deploy lên fal
+      - run: fal deploy
         env:
           FAL_KEY: ${{ secrets.FAL_KEY }}
