@@ -1,0 +1,16 @@
+{
+  "name": "flux-dev-app",
+  "entry": "predict.py:Predictor",
+  "build": {
+    "gpu": true,
+    "cuda": "12.1",
+    "python_version": "3.11",
+    "requirements_file": "requirements.txt"
+  },
+  "files": [
+    "predict.py",
+    "requirements.txt",
+    "weights.py",
+    "utils/**"
+  ]
+}
