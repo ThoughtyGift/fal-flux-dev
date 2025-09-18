@@ -2,6 +2,7 @@
   "name": "flux-dev-app",
   "version": "0.1.0",
   "entry": "predict.py:Predictor",
+  "source_dir": ".",
   "build": {
     "gpu": true,
     "cuda": "12.1",
