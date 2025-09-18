@@ -29,4 +29,4 @@ jobs:
       # Deploy lên fal
       - run: fal deploy
         env:
-          FAL_KEY: ${{ secrets.FAL_KEY }}
+          FAL_KEY: ${{ secrets.FAL_API_KEY }}
