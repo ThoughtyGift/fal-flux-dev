@@ -1,26 +1,30 @@
-name: Deploy to fal.ai
+name: Deploy to fal
 
 on:
   push:
-    branches:
-      - main  # deploy khi push lên nhánh main
+    branches: [ main ]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.10"
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install cog
 
       - name: Install fal CLI
-        run: pip install fal
+        run: pip install fal-serverless
 
-      - name: Deploy to fal.ai
-        run: fal deploy 
+      - name: Deploy to fal
+        run: fal deploy
         env:
-          FAL_KEY: ${{ secrets.FAL_API_KEY }}
+          FAL_KEY: ${{ secrets.FAL_KEY }}
