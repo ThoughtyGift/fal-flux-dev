@@ -11,6 +11,8 @@
   },
   "files": [
     "predict.py",
-    "requirements.txt"
+    "requirements.txt",
+    "weights.py",
+    "utils/**"
   ]
 }
