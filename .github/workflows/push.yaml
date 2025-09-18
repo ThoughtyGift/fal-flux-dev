@@ -25,8 +25,7 @@ jobs:
 
       # Cài dependencies Python (bao gồm cog)
       - run: pip install -r requirements.txt
-      - run: ls -la
-      - run: cat falconfig.yaml
+  
 
 
       # Deploy lên fal
