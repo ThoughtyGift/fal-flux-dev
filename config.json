@@ -3,5 +3,6 @@
   "predict": "predict.py:Predictor",
   "requirements": "requirements.txt",
   "python_version": "3.11",
-  "gpu": true
+  "gpu": true,
+  "source_dir": "."
 }
